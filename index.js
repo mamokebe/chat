@@ -2,6 +2,7 @@ var countTx = 0, countRx = 0, id = 'user_' + Math.random();
   (function () {
     var pubnub = new PubNub({publishKey: 'demo', subscribeKey: 'demo', userId: id}); // Your PubNub keys here. Get them from https://dashboard.pubnub.com.
     var box = document.getElementById("outputDiv"), input = document.getElementById("input"), channel = '10chat';
+    send=document.getElementById("send"), channel = '10chat';
     pubnub.subscribe({channels: [channel]}); // Subscribe to a channel.
     pubnub.addListener({
       message: function (m) {
@@ -9,12 +10,21 @@ var countTx = 0, countRx = 0, id = 'user_' + Math.random();
         box.scrollTop = box.scrollHeight;
       }
     });
-    input.addEventListener('keypress', function (e) {
-      (e.keyCode || e.charCode) === 13 && input.value != "" && pubnub.publish({ // Publish new message when enter is pressed. 
+    function sendmessage(){
+      input.addEventListener('keypress', function (e) {
+        (e.keyCode || e.charCode) === 13 && input.value != "" && pubnub.publish({ // Publish new message when enter is pressed. 
+          channel: channel, message: input.value, x: (input.value = '')
+        });
+      });
+    }
+    send.addEventListener('click', (e) => {
+      input.value != "" && pubnub.publish({ // Publish new message when enter is pressed. 
         channel: channel, message: input.value, x: (input.value = '')
       });
-    });
+    })
+    sendmessage();
   })();
+  
   // End count: lines of code to create a chat app with the PubNub SDK. 
 
   hljs.highlightAll();

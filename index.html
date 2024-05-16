@@ -14,7 +14,7 @@
   <meta name="keywords" content="JavaScript,PubNub,Chat,chat-room,chatting,SDK,PubSub-sdk,tutorial">
   <meta name="author" content="Chandler Mayo">
   <meta name="author" content="Darryn Campbell">
-  <title>JavaScript Chat Demo | PubNub</title>
+  <title>Chat App</title>
   <!--  Code syntax highlighting -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
@@ -63,7 +63,9 @@ input.addEventListener('keypress', function (e) {
 
   </div>
   
-  <input id="input" placeholder="Type your message and press enter" />
+  <input id="input" placeholder="Type your message and press enter">
+  <button id="send">send</button>
+      
 
   <!--  Begin count: lines of code to create a chat app with the PubNub SDK (count ;)-->
   <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.7.2.0.min.js"></script>
