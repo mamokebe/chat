@@ -38,7 +38,7 @@ input {
     width: 100%;
     padding: 6px 15px 6px 15px;
     box-sizing: border-box;
-    border-radius: 12px;
+    border-radius: 0px;
     font-size: medium;
 }
 
@@ -51,8 +51,9 @@ h1 {
     width: 90%;
     padding: 6px 20px;
     margin: 8px;
-    background-color: #c2d3e9;
+    background-color: #eceff3;
     border-style: solid;
+    border: none;
     border-color: black;
     border-width: 2px;
     box-sizing: border-box;
@@ -84,4 +85,14 @@ h1 {
 .messageTime {
     font-size: x-small;
     float: right;
+}
+.button-send{
+    font-size: 30px;
+    border: none;
+    border-radius: 0px;
+    color: green;
+    display: flex;
+    float: right;
+    padding-left: 15px;
+    padding-right: 15px;
 }
